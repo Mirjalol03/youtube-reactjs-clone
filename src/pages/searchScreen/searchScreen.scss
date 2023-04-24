@@ -1,0 +1,40 @@
+.search{
+
+    &__videos{
+        max-width: 600px;
+        margin: auto;
+    }
+
+    &__video{
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &-thumbnail{
+            width: 200px;
+            margin-right: 10px;
+            height: 100%;
+            img{
+                max-width: 200px;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    @media screen and (max-width: 640px) {
+        .search__video{
+            flex-direction: column;
+            &-thumbnail{
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
