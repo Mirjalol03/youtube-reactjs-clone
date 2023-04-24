@@ -1,4 +1,3 @@
-import { auth, provider } from "../../firebase";
 
 import { signInWithPopup } from "firebase/auth";
 import {
@@ -9,7 +8,8 @@ import {
   LOG_OUT,
 } from "../actionsTypes";
 import { TOKEN_NAME, USER_INFO } from "../../utils/constants";
-LOGIN_SUCCESS
+// LOGIN_SUCCESS
+import { auth, provider } from "../../firebase";
 export const Login = () => async (dispatch) => {
   try {
     dispatch({
