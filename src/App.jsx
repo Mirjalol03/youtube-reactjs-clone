@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/header/header";
 import Sidebar from "./components/sidebar/sidebar";
 import HomeScreen from "./pages/homescreen/HomeScreen";
+import SearchScreen from "./pages/searchScreen/SearchScreen";
 import { Container } from "react-bootstrap";
 import "./App.scss";
 import LoginScreen from "./pages/loginScreen/LoginScreen";
@@ -53,10 +54,10 @@ const App = () => {
       />
 
       <Route
-        path="/search"
+        path="/search/:query"
         element={
           <Layout>
-            <h2>Search</h2>
+            <SearchScreen />
           </Layout>
         }
       />

@@ -6,12 +6,26 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { USER_INFO } from "../../utils/constants";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import logo from '../../assets/images/YT-Black.png';
 
 const Header = ({ handleToggleSidebar }) => {
   const selector = useSelector((state) => state.auth);
   console.log(selector);
   const user = JSON.parse(localStorage.getItem(USER_INFO));
+
+  const Navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const query = e.target[0].value;
+
+    if (query) {
+      Navigate(`/search/${query}`);
+    }
+
+  }
 
   return (
     <div className="border header">
@@ -22,9 +36,9 @@ const Header = ({ handleToggleSidebar }) => {
         style={{ cursor: "pointer" }}
       />
       <Link to={'/'}>
-      <img src='./assets/YT-Black.png' alt="" className="header__logo color-white" />
+      <img src={logo} alt="" className="header__logo color-white" />
       </Link>
-      <form>
+      <form onSubmit={(e) => handleSearch(e)}>
         <input type="text" placeholder="Search" />
         <button type="submit">
           <AiOutlineSearch size={22} />
