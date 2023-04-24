@@ -6,6 +6,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { USER_INFO } from "../../utils/constants";
+import { Link } from "react-router-dom";
 
 const Header = ({ handleToggleSidebar }) => {
   const selector = useSelector((state) => state.auth);
@@ -20,7 +21,9 @@ const Header = ({ handleToggleSidebar }) => {
         onClick={() => handleToggleSidebar()}
         style={{ cursor: "pointer" }}
       />
+      <Link to={'/'}>
       <img src={Logo} alt="" className="header__logo color-white" />
+      </Link>
       <form>
         <input type="text" placeholder="Search" />
         <button type="submit">
