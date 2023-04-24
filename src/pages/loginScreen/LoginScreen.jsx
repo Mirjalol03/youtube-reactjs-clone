@@ -3,6 +3,7 @@ import "./LoginScreen.scss";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Login } from "../../redux/actions/auth.action";
+import googleIcon from "../../assets/images/google_icon.png";
 const LoginScreen = () => {
   const dispatch = useDispatch();
 
@@ -21,10 +22,15 @@ const LoginScreen = () => {
 
   return (
     <div className="login">
-      <div className="login__container">
-        <img src="https://pngimg.com/uploads/youtube/youtube_PNG2.png" alt="" />
-        <button onClick={handleLogin}> Login with Google</button>
-        <p> This project is made using Youtube Data Api</p>
+       <div className="login-button" onClick={handleLogin}>
+        <div className="login-button__image">
+          <img src={googleIcon} alt="google icon" />
+        </div>
+        <div className="login-button__text">
+          <h5>
+          Sign in with Google
+          </h5>
+        </div>
       </div>
     </div>
   );
