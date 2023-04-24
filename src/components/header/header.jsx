@@ -14,7 +14,7 @@ const Header = ({ handleToggleSidebar }) => {
   const user = JSON.parse(localStorage.getItem(USER_INFO));
 
   return (
-    <div className="border border-dark header">
+    <div className="border header">
       <FaBars
         className="header__menu"
         size={26}
@@ -22,7 +22,7 @@ const Header = ({ handleToggleSidebar }) => {
         style={{ cursor: "pointer" }}
       />
       <Link to={'/'}>
-      <img src={Logo} alt="" className="header__logo color-white" />
+      <img src='./assets/YT-Black.png' alt="" className="header__logo color-white" />
       </Link>
       <form>
         <input type="text" placeholder="Search" />
